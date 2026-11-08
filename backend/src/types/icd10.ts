@@ -4,7 +4,9 @@ export interface Icd10Diagnosis {
   name: string;
 }
 
+export type DataSource = 'cache' | 'db';
+
 export interface Icd10Response {
-  source: 'db';
+  source: DataSource;
   data: Icd10Diagnosis[];
 }
