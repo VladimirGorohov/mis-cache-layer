@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express from 'express';
+import { dictionariesRouter } from './routes/dictionaries';
 
 export function createApp() {
   const app = express();
@@ -10,6 +11,8 @@ export function createApp() {
   app.get('/health', (_req, res) => {
     res.json({ status: 'ok' });
   });
+
+  app.use('/api/v1/dictionaries', dictionariesRouter);
 
   return app;
 }
